@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JournalEntryResponse.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Application</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.appserver.controller.model</a> &gt; <span class="el_source">JournalEntryResponse.java</span></div><h1>JournalEntryResponse.java</h1><pre class="source lang-java linenums">package com.kenzie.appserver.controller.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+<span class="nc" id="L5">public class JournalEntryResponse {</span>
+
+    @JsonProperty(&quot;journalId&quot;)
+    private String journalId;
+
+    @JsonProperty(&quot;journalEntryId&quot;)
+    private String journalEntryId;
+
+    @JsonProperty(&quot;timestamp&quot;)
+    private String timestamp;
+
+    @JsonProperty(&quot;username&quot;)
+    private String username;
+
+    @JsonProperty(&quot;title&quot;)
+    private String title;
+
+    @JsonProperty(&quot;body&quot;)
+    private String body;
+
+    public String getJournalId() {
+<span class="nc" id="L26">        return journalId;</span>
+    }
+
+    public void setJournalId(String journalId) {
+<span class="nc" id="L30">        this.journalId = journalId;</span>
+<span class="nc" id="L31">    }</span>
+
+    public String getJournalEntryId() {
+<span class="nc" id="L34">        return journalEntryId;</span>
+    }
+
+    public void setJournalEntryId(String journalEntryId) {
+<span class="nc" id="L38">        this.journalEntryId = journalEntryId;</span>
+<span class="nc" id="L39">    }</span>
+
+    public String getTimestamp() {
+<span class="nc" id="L42">        return timestamp;</span>
+    }
+
+    public void setTimestamp(String timestamp) {
+<span class="nc" id="L46">        this.timestamp = timestamp;</span>
+<span class="nc" id="L47">    }</span>
+
+    public String getUsername() {
+<span class="nc" id="L50">        return username;</span>
+    }
+
+    public void setUsername(String username) {
+<span class="nc" id="L54">        this.username = username;</span>
+<span class="nc" id="L55">    }</span>
+
+    public String getTitle() {
+<span class="nc" id="L58">        return title;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="nc" id="L62">        this.title = title;</span>
+<span class="nc" id="L63">    }</span>
+
+    public String getBody() {
+<span class="nc" id="L66">        return body;</span>
+    }
+
+    public void setBody(String body) {
+<span class="nc" id="L70">        this.body = body;</span>
+<span class="nc" id="L71">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

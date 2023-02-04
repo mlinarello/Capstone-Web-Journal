@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExampleService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Application</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.appserver.service</a> &gt; <span class="el_source">ExampleService.java</span></div><h1>ExampleService.java</h1><pre class="source lang-java linenums">package com.kenzie.appserver.service;
+
+import com.kenzie.appserver.repositories.model.ExampleRecord;
+import com.kenzie.appserver.repositories.ExampleRepository;
+import com.kenzie.appserver.service.model.Example;
+
+import com.kenzie.capstone.service.client.LambdaServiceClient;
+import com.kenzie.capstone.service.model.ExampleData;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ExampleService {
+    private ExampleRepository exampleRepository;
+    private LambdaServiceClient lambdaServiceClient;
+
+<span class="fc" id="L16">    public ExampleService(ExampleRepository exampleRepository, LambdaServiceClient lambdaServiceClient) {</span>
+<span class="fc" id="L17">        this.exampleRepository = exampleRepository;</span>
+<span class="fc" id="L18">        this.lambdaServiceClient = lambdaServiceClient;</span>
+<span class="fc" id="L19">    }</span>
+
+    public Example findById(String id) {
+
+        // Example getting data from the lambda
+<span class="fc" id="L24">        ExampleData dataFromLambda = lambdaServiceClient.getExampleData(id);</span>
+
+        // Example getting data from the local repository
+<span class="fc" id="L27">        Example dataFromDynamo = exampleRepository</span>
+<span class="fc" id="L28">                .findById(id)</span>
+<span class="fc" id="L29">                .map(example -&gt; new Example(example.getId(), example.getName()))</span>
+<span class="fc" id="L30">                .orElse(null);</span>
+
+<span class="fc" id="L32">        return dataFromDynamo;</span>
+    }
+
+    public Example addNewExample(String name) {
+        // Example sending data to the lambda
+<span class="nc" id="L37">        ExampleData dataFromLambda = lambdaServiceClient.setExampleData(name);</span>
+
+        // Example sending data to the local repository
+<span class="nc" id="L40">        ExampleRecord exampleRecord = new ExampleRecord();</span>
+<span class="nc" id="L41">        exampleRecord.setId(dataFromLambda.getId());</span>
+<span class="nc" id="L42">        exampleRecord.setName(dataFromLambda.getData());</span>
+<span class="nc" id="L43">        exampleRepository.save(exampleRecord);</span>
+
+<span class="nc" id="L45">        Example example = new Example(dataFromLambda.getId(), name);</span>
+<span class="nc" id="L46">        return example;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

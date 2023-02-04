@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.appserver.controller.ExampleControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-01-10T03:56:53" hostname="Mikes-MBP.lan" time="30.085">
+  <properties/>
+  <testcase name="createExample_CreateSuccessful()" classname="com.kenzie.appserver.controller.ExampleControllerTest" time="14.071"/>
+  <testcase name="getById_Exists()" classname="com.kenzie.appserver.controller.ExampleControllerTest" time="16.013"/>
+  <system-out><![CDATA[2023-01-09 22:56:32  INFO  AbstractContextLoader - Could not detect default resource locations for test class [com.kenzie.appserver.controller.ExampleControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-01-09 22:56:32  INFO  AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.kenzie.appserver.controller.ExampleControllerTest]: ExampleControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-01-09 22:56:33  INFO  SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.kenzie.appserver.Application for test class com.kenzie.appserver.controller.ExampleControllerTest
+2023-01-09 22:56:33  INFO  SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-01-09 22:56:33  INFO  SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@598778cc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3386ed8, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@727453a3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@67dc6b48, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@57f2e67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4571cebe, org.springframework.test.context.transaction.TransactionalTestExecutionListener@154864f8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@11cadb32, org.springframework.test.context.event.EventPublishingTestExecutionListener@6d3ad37a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@26f5e45d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@704c3bdf, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37986daf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@c82d925, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@55c03e4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@14df5253]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2023-01-09 22:56:34  INFO  Version - HV000001: Hibernate Validator 6.0.9.Final
+2023-01-09 22:56:34  INFO  DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2023-01-09 22:56:35  INFO  DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2023-01-09 22:56:35  INFO  DockerClientFactory - Docker host IP address is localhost
+2023-01-09 22:56:35  INFO  DockerClientFactory - Connected to docker: 
+  Server Version: 20.10.21
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 7858 MB
+2023-01-09 22:56:35  INFO  ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2023-01-09 22:56:36  INFO  RegistryAuthLocator - Credential helper/store (docker-credential-desktop) does not have credentials for index.docker.io
+2023-01-09 22:56:37  INFO  DockerClientFactory - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2023-01-09 22:56:37  INFO  DockerClientFactory - Checking the system...
+2023-01-09 22:56:37  INFO  DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2023-01-09 22:56:37  INFO  DockerClientFactory - ✔︎ Docker environment should have more than 2GB free disk space
+2023-01-09 22:56:37  INFO  ]]>&#x1f433;<![CDATA[ [amazon/dynamodb-local:latest] - Creating container for image: amazon/dynamodb-local:latest
+2023-01-09 22:56:37  INFO  ]]>&#x1f433;<![CDATA[ [amazon/dynamodb-local:latest] - Container amazon/dynamodb-local:latest is starting: ef1b9ad39006f0e233f4e7995c3485be05e15e3747556235e3f0dd5dc5d24d13
+2023-01-09 22:56:39  INFO  ]]>&#x1f433;<![CDATA[ [amazon/dynamodb-local:latest] - Container amazon/dynamodb-local:latest started in PT1.773243S
+2023-01-09 22:56:39  INFO  ExampleControllerTest - Starting ExampleControllerTest using Java 16.0.2 on Mikes-MBP.lan with PID 15103 (started by mikelinarello in /Users/mikelinarello/kenzie/ata-capstone-project-MNDT/IntegrationTests)
+2023-01-09 22:56:39  INFO  ExampleControllerTest - The following profiles are active: test
+2023-01-09 22:56:40  INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data DynamoDB repositories in DEFAULT mode.
+2023-01-09 22:56:40  INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 4 DynamoDB repository interfaces.
+2023-01-09 22:56:48  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#682d2997' of type [com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-09 22:56:48  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#8d902f' of type [com.amazonaws.auth.profile.ProfileCredentialsProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-09 22:56:48  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'credentialsProvider' of type [org.springframework.cloud.aws.core.credentials.CredentialsProviderFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-09 22:56:48  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'credentialsProvider' of type [com.amazonaws.auth.AWSCredentialsProviderChain] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-09 22:56:48  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamoDbConfig' of type [com.kenzie.appserver.config.DynamoDbConfig$$EnhancerBySpringCGLIB$$ae62ff4d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-09 22:56:48  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'amazonDynamoDB' of type [com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-09 22:56:48  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamoDB-DynamoDBMapperConfig' of type [com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-09 22:56:49  INFO  TomcatWebServer - Tomcat initialized with port(s): 0 (http)
+2023-01-09 22:56:49  INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 9731 ms
+2023-01-09 22:56:49  INFO  PushMeterRegistry - publishing metrics for CloudWatchMeterRegistry every 1m
+2023-01-09 22:56:49  INFO  DynamoDBRepositoryFactory - Spring Data DynamoDB Version: 5.2.1 (2.2)
+2023-01-09 22:56:49  INFO  DynamoDBRepositoryFactory - Spring Data Version:          2.6.2
+2023-01-09 22:56:49  INFO  DynamoDBRepositoryFactory - AWS SDK Version:              1.12.237
+2023-01-09 22:56:49  INFO  DynamoDBRepositoryFactory - Java Version:                 16.0.2 - OpenJDK 64-Bit Server VM 16.0.2+7
+2023-01-09 22:56:49  INFO  DynamoDBRepositoryFactory - Platform Details:             Mac OS X 12.6
+2023-01-09 22:56:49  WARN  DynamoDBRepositoryFactory - This Spring Data DynamoDB implementation might not be compatible with the available Spring Data classes on the classpath!
+NoDefClassFoundExceptions or similar might occur!
+2023-01-09 22:56:50  INFO  WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2023-01-09 22:56:52  INFO  TestDispatcherServlet - Initializing Servlet ''
+2023-01-09 22:56:52  INFO  EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-01-09 22:56:52  INFO  TestDispatcherServlet - Completed initialization in 26 ms
+2023-01-09 22:56:52  INFO  TomcatWebServer - Tomcat started on port(s): 56967 (http) with context path ''
+2023-01-09 22:56:52  INFO  Entity2DynamoDBTableSynchronizer - Checking repository classes with DynamoDB tables Journal, JournalEntry, Example, User for ContextRefreshedEvent
+2023-01-09 22:56:52  WARN  CredentialsLegacyConfigLocationProvider - Found the legacy config profiles file at [/Users/mikelinarello/.aws/config]. Please move it to the latest default location [~/.aws/credentials].
+2023-01-09 22:56:53  INFO  ExampleControllerTest - Started ExampleControllerTest in 19.043 seconds (JVM running for 22.103)
+2023-01-09 22:57:00  WARN  CredentialsLegacyConfigLocationProvider - Found the legacy config profiles file at [/Users/mikelinarello/.aws/config]. Please move it to the latest default location [~/.aws/credentials].
+Data: CEN4Yj5WCeKWo7BDEtXJOgCSoZJZxSrN7FqPzRJjC5a45X6N6OjCf1NpiXBoYAYl
+(POST https://cbht53ryx8.execute-api.us-east-1.amazonaws.com/Prod/example) 200
+API: https://cbht53ryx8.execute-api.us-east-1.amazonaws.com/Prod/
+URL: https://cbht53ryx8.execute-api.us-east-1.amazonaws.com/Prod/example
+Data: VKrcKxGYsdixPih7qOnb4BSDXNpIUR64Utch3490i1yEZgQwdiYab5JR8ws6kT4k
+(POST https://cbht53ryx8.execute-api.us-east-1.amazonaws.com/Prod/example) 200
+API: https://cbht53ryx8.execute-api.us-east-1.amazonaws.com/Prod/
+URL: https://cbht53ryx8.execute-api.us-east-1.amazonaws.com/Prod/example
+]]></system-out>
+  <system-err><![CDATA[Unexpected problem occured during version sanity check
+Reported exception:
+java.lang.AbstractMethodError: Receiver class org.apache.logging.slf4j.SLF4JServiceProvider does not define or inherit an implementation of the resolved method 'abstract java.lang.String getRequestedApiVersion()' of interface org.slf4j.spi.SLF4JServiceProvider.
+	at org.slf4j.LoggerFactory.versionSanityCheck(LoggerFactory.java:298)
+	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:141)
+	at org.slf4j.LoggerFactory.getProvider(LoggerFactory.java:422)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:408)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:357)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:383)
+	at org.testcontainers.DockerClientFactory.<clinit>(DockerClientFactory.java:54)
+	at org.testcontainers.containers.GenericContainer.<init>(GenericContainer.java:198)
+	at com.kenzie.appserver.DynamoDbInitializer.getDynamoDbInstance(DynamoDbInitializer.java:13)
+	at com.kenzie.appserver.DynamoDbInitializer.initialize(DynamoDbInitializer.java:22)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:612)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:380)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:382)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:377)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:376)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:289)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:288)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:278)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:277)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:105)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:104)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Jan 09, 2023 10:56:49 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-auto-1"]
+Jan 09, 2023 10:56:49 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service [Tomcat]
+Jan 09, 2023 10:56:49 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet engine: [Apache Tomcat/9.0.56]
+Jan 09, 2023 10:56:49 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring embedded WebApplicationContext
+Jan 09, 2023 10:56:52 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring TestDispatcherServlet ''
+Jan 09, 2023 10:56:52 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-auto-1"]
+]]></system-err>
+</testsuite>

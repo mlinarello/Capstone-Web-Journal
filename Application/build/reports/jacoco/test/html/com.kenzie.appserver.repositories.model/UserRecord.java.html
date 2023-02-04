@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserRecord.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Application</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.appserver.repositories.model</a> &gt; <span class="el_source">UserRecord.java</span></div><h1>UserRecord.java</h1><pre class="source lang-java linenums">package com.kenzie.appserver.repositories.model;
+
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+
+import java.util.Objects;
+
+@DynamoDBTable(tableName = &quot;User&quot;)
+<span class="fc" id="L10">public class UserRecord {</span>
+    private String username;
+    private String name;
+    private String password;
+    private String email;
+    //string
+
+    @DynamoDBHashKey(attributeName = &quot;username&quot;)
+    public String getUsername() {
+<span class="fc" id="L19">        return this.username;</span>
+    }
+
+    @DynamoDBAttribute(attributeName = &quot;name&quot;)
+    public String getName() {
+<span class="nc" id="L24">        return this.name;</span>
+    }
+
+    @DynamoDBAttribute(attributeName = &quot;password&quot;)
+    public String getPassword() {
+<span class="fc" id="L29">        return this.password;</span>
+    }
+
+    @DynamoDBAttribute(attributeName = &quot;email&quot;)
+    public String getEmail() {
+<span class="nc" id="L34">        return email;</span>
+    }
+
+    public void setUsername(String username) {
+<span class="fc" id="L38">        this.username = username;</span>
+<span class="fc" id="L39">    }</span>
+
+    public void setName(String name) {
+<span class="fc" id="L42">        this.name = name;</span>
+<span class="fc" id="L43">    }</span>
+
+    public void setPassword(String password) {
+<span class="fc" id="L46">        this.password = password;</span>
+<span class="fc" id="L47">    }</span>
+
+
+    public void setEmail(String email) {
+<span class="fc" id="L51">        this.email = email;</span>
+<span class="fc" id="L52">    }</span>
+
+
+    @Override
+    public boolean equals(Object o) {
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L58" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+
+<span class="fc" id="L60">        UserRecord that = (UserRecord) o;</span>
+
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if (!Objects.equals(username, that.username)) return false;</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">        if (!Objects.equals(name, that.name)) return false;</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        if (!Objects.equals(password, that.password)) return false;</span>
+<span class="fc" id="L65">        return Objects.equals(email, that.email);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc bnc" id="L70" title="All 2 branches missed.">        int result = username != null ? username.hashCode() : 0;</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">        result = 31 * result + (name != null ? name.hashCode() : 0);</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        result = 31 * result + (password != null ? password.hashCode() : 0);</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">        result = 31 * result + (email != null ? email.hashCode() : 0);</span>
+<span class="nc" id="L74">        return result;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

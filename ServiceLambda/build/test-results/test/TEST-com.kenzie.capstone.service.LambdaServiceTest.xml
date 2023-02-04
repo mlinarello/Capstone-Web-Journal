@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.capstone.service.LambdaServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-01-10T03:57:34" hostname="Mikes-MBP.lan" time="0.059">
+  <properties/>
+  <testcase name="emailLambdaTest()" classname="com.kenzie.capstone.service.LambdaServiceTest" time="0.012"/>
+  <testcase name="setDataTest()" classname="com.kenzie.capstone.service.LambdaServiceTest" time="0.036"/>
+  <testcase name="getDataTest()" classname="com.kenzie.capstone.service.LambdaServiceTest" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

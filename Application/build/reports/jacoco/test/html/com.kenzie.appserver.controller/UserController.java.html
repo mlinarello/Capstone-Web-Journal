@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Application</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.appserver.controller</a> &gt; <span class="el_source">UserController.java</span></div><h1>UserController.java</h1><pre class="source lang-java linenums">package com.kenzie.appserver.controller;
+
+
+import com.kenzie.appserver.controller.model.CreateUserRequest;
+import com.kenzie.appserver.controller.model.CreateUserResponse;
+import com.kenzie.appserver.controller.model.LoginRequest;
+import com.kenzie.appserver.controller.model.SendEmailRequest;
+import com.kenzie.appserver.service.UserService;
+import com.kenzie.appserver.service.model.User;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(&quot;/user&quot;)
+public class UserController {
+
+    private UserService userService;
+
+<span class="nc" id="L22">    UserController(UserService userService) {</span>
+<span class="nc" id="L23">        this.userService = userService;</span>
+<span class="nc" id="L24">    }</span>
+
+    @PostMapping(&quot;/create&quot;)
+    public ResponseEntity&lt;CreateUserResponse&gt; createAccount(@RequestBody CreateUserRequest createUserRequest) {
+<span class="nc bnc" id="L28" title="All 6 branches missed.">        if (createUserRequest.getUsername() == null || createUserRequest.getPassword() == null || createUserRequest.getName()</span>
+<span class="nc bnc" id="L29" title="All 2 branches missed.">                == null || createUserRequest.getEmail() == null) {</span>
+<span class="nc" id="L30">            return ResponseEntity.badRequest().build();</span>
+        }
+<span class="nc" id="L32">        User user = new User(createUserRequest.getUsername(),</span>
+<span class="nc" id="L33">                createUserRequest.getName(), createUserRequest.getEmail(),</span>
+<span class="nc" id="L34">                createUserRequest.getPassword());</span>
+
+        try {
+<span class="nc" id="L37">            userService.createAccount(user);</span>
+<span class="nc" id="L38">        } catch (IllegalArgumentException iae) {</span>
+<span class="nc" id="L39">            return ResponseEntity.badRequest().build();</span>
+<span class="nc" id="L40">        }</span>
+
+<span class="nc" id="L42">        CreateUserResponse createUserResponse = createUserResponse(user);</span>
+<span class="nc" id="L43">        return ResponseEntity.ok(createUserResponse);</span>
+    }
+
+    private CreateUserResponse createUserResponse(User user) {
+<span class="nc" id="L47">        CreateUserResponse createUserResponse = new CreateUserResponse();</span>
+<span class="nc" id="L48">        createUserResponse.setUsername(user.getUsername());</span>
+<span class="nc" id="L49">        createUserResponse.setPassword(user.getPassword());</span>
+<span class="nc" id="L50">        createUserResponse.setName(user.getName());</span>
+<span class="nc" id="L51">        createUserResponse.setEmail(user.getEmail());</span>
+<span class="nc" id="L52">        return createUserResponse;</span>
+    }
+
+    @PostMapping(&quot;/login&quot;)
+    public ResponseEntity&lt;String&gt; login(@RequestBody LoginRequest loginRequest) {
+<span class="nc" id="L57">        System.out.println(loginRequest.toString());</span>
+        try {
+<span class="nc" id="L59">            String id = userService.login(loginRequest);</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">            if (id.equals(&quot;nologin&quot;)) {</span>
+<span class="nc" id="L61">                return ResponseEntity.badRequest().build();</span>
+            }
+<span class="nc" id="L63">            System.out.println(id);</span>
+<span class="nc" id="L64">            return ResponseEntity.ok(id);</span>
+<span class="nc" id="L65">        } catch (Exception e) {</span>
+<span class="nc" id="L66">            e.printStackTrace();</span>
+        }
+<span class="nc" id="L68">        return ResponseEntity.badRequest().build();</span>
+    }
+
+
+    @PostMapping(&quot;/email/welcome&quot;)
+    public ResponseEntity&lt;String&gt; sendWelcomeEmail(@RequestBody SendEmailRequest sendEmailRequest){
+<span class="nc" id="L74">        userService.sendWelcomeEmail(sendEmailRequest.getEmail());</span>
+<span class="nc" id="L75">        return ResponseEntity.ok().build();</span>
+    }
+
+//    @PostMapping(&quot;/notify/{username}&quot;)
+//    public ResponseEntity&lt;String&gt; notify(@RequestBody NotifyUserRequest notifyUserRequest) {
+//
+//    }
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

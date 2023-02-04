@@ -1,0 +1,440 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		Application (spotbugsMain)</p>
+      <p>SpotBugs version: 4.2.1</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/config/DynamoDbConfig.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/config/CacheStore.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/config/LambdaServiceClientConfiguration.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/config/CacheConfig.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/config/ExecutorServiceConfig.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/repositories/UserRepository.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/repositories/ExampleRepository.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/repositories/JournalEntryRepository.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/repositories/JournalRepository.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/repositories/model/ExampleRecord.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/repositories/model/JournalKey.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/repositories/model/UserRecord.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/repositories/model/JournalRecord.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/repositories/model/JournalEntryKey.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/repositories/model/JournalEntryRecord.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/BaseController.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/JournalController.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/JournalResponse.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/JournalUpdateRequest.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/LoginRequest.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/CreateUserResponse.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/ExampleResponse.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/CreateEntryRequest.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/ExampleCreateRequest.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/Quote.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/JournalEntryResponse.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/CreateUserRequest.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/SendEmailRequest.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/NotifyUserRequest.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/model/CreateJournalRequest.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/InspoController.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/ExampleController.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/controller/UserController.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/ApplicationStartUpListener.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/Scheduler.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/service/JournalService.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/service/UserService.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/service/ExampleService.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/service/model/Example.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/service/model/User.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/service/model/Journal.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/service/model/JournalEntry.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/service/InspoService.class</li>
+         <li>/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/build/classes/java/main/com/kenzie/appserver/Application.class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>998 lines of code analyzed,
+	in 44 classes, 
+	in 8 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">2</td>
+            <td align="right">2.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">9</td>
+            <td align="right">9.02</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>11</b>
+            </td>
+            <td align="right">
+               <b>11.02</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_I18N">Internationalization Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_I18N">Internationalization Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+            </td>
+            <td align="right">6</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">4</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>11</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_I18N">Internationalization Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e255');">
+            <td>
+               <span class="priority-1">Dm</span>
+            </td>
+            <td>Found reliance on default encoding in com.kenzie.appserver.service.InspoService.getInspirationalQuote(): new java.util.Scanner(File)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e255" style="display: none;">
+                  <a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+                  <br/>In class com.kenzie.appserver.service.InspoService<br/>In method com.kenzie.appserver.service.InspoService.getInspirationalQuote()<br/>Called method new java.util.Scanner(File)<br/>At InspoService.java:[line 24]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_PERFORMANCE">Performance Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e270');">
+            <td>
+               <span class="priority-2">UrF</span>
+            </td>
+            <td>Unread field: com.kenzie.appserver.service.InspoService.quotes</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e270" style="display: none;">
+                  <a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+                  <br/>In class com.kenzie.appserver.service.InspoService<br/>Field com.kenzie.appserver.service.InspoService.quotes<br/>At InspoService.java:[line 17]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e199');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: com.kenzie.appserver.repositories.model.JournalEntryRecord.entryId</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e199" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class com.kenzie.appserver.repositories.model.JournalEntryRecord<br/>Field com.kenzie.appserver.repositories.model.JournalEntryRecord.entryId<br/>In JournalEntryRecord.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e212');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: com.kenzie.appserver.repositories.model.JournalEntryRecord.journalId</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e212" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class com.kenzie.appserver.repositories.model.JournalEntryRecord<br/>Field com.kenzie.appserver.repositories.model.JournalEntryRecord.journalId<br/>In JournalEntryRecord.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e225');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: com.kenzie.appserver.repositories.model.JournalRecord.isFavorite</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e225" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class com.kenzie.appserver.repositories.model.JournalRecord<br/>Field com.kenzie.appserver.repositories.model.JournalRecord.isFavorite<br/>In JournalRecord.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e334');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: com.kenzie.appserver.service.model.JournalEntry.isFavorite</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e334" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class com.kenzie.appserver.service.model.JournalEntry<br/>Field com.kenzie.appserver.service.model.JournalEntry.isFavorite<br/>In JournalEntry.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e348');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused field: com.kenzie.appserver.service.model.User.phoneNumber</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e348" style="display: none;">
+                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
+                  <br/>In class com.kenzie.appserver.service.model.User<br/>Field com.kenzie.appserver.service.model.User.phoneNumber<br/>In User.java</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e238');">
+            <td>
+               <span class="priority-2">DLS</span>
+            </td>
+            <td>Dead store to dataFromLambda in com.kenzie.appserver.service.ExampleService.findById(String)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e238" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class com.kenzie.appserver.service.ExampleService<br/>In method com.kenzie.appserver.service.ExampleService.findById(String)<br/>Local variable named dataFromLambda<br/>At ExampleService.java:[line 24]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e283');">
+            <td>
+               <span class="priority-1">DLS</span>
+            </td>
+            <td>Dead store to key in com.kenzie.appserver.service.JournalService.deleteJournal(Journal)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e283" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class com.kenzie.appserver.service.JournalService<br/>In method com.kenzie.appserver.service.JournalService.deleteJournal(Journal)<br/>Local variable named key<br/>At JournalService.java:[line 58]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e300');">
+            <td>
+               <span class="priority-2">RCN</span>
+            </td>
+            <td>Redundant nullcheck of journalEntryIterable, which is known to be non-null in com.kenzie.appserver.service.JournalService.getEntriesForJournal(String)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e300" style="display: none;">
+                  <a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+                  <br/>In class com.kenzie.appserver.service.JournalService<br/>In method com.kenzie.appserver.service.JournalService.getEntriesForJournal(String)<br/>Value loaded from journalEntryIterable<br/>Return value of com.kenzie.appserver.repositories.JournalEntryRepository.findAll() of type Iterable<br/>Redundant null check at JournalService.java:[line 126]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e317');">
+            <td>
+               <span class="priority-2">RCN</span>
+            </td>
+            <td>Redundant nullcheck of journalIterator, which is known to be non-null in com.kenzie.appserver.service.JournalService.getJournalById(String)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e317" style="display: none;">
+                  <a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Bug type RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE (click for details)</a>
+                  <br/>In class com.kenzie.appserver.service.JournalService<br/>In method com.kenzie.appserver.service.JournalService.getJournalById(String)<br/>Value loaded from journalIterator<br/>Return value of com.kenzie.appserver.repositories.JournalRepository.findAll() of type Iterable<br/>Redundant null check at JournalService.java:[line 73]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE: Dead store to local variable</a>
+      </h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because SpotBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    <h2>
+         <a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+      </h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      <h2>
+         <a name="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE: Redundant nullcheck of value known to be non-null</a>
+      </h2>
+
+<p> This method contains a redundant check of a known non-null value against
+the constant null.</p>
+
+    <h2>
+         <a name="URF_UNREAD_FIELD">URF_UNREAD_FIELD: Unread field</a>
+      </h2>
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    <h2>
+         <a name="UUF_UNUSED_FIELD">UUF_UNUSED_FIELD: Unused field</a>
+      </h2>
+
+  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
+
+    </body>
+</html>

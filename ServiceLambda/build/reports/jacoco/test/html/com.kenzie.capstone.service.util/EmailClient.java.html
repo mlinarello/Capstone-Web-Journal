@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmailClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ServiceLambda</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.capstone.service.util</a> &gt; <span class="el_source">EmailClient.java</span></div><h1>EmailClient.java</h1><pre class="source lang-java linenums">package com.kenzie.capstone.service.util;
+
+
+import com.mailgun.api.v3.MailgunMessagesApi;
+import com.mailgun.client.MailgunClient;
+import com.mailgun.model.message.Message;
+import com.mailgun.model.message.MessageResponse;
+
+public class EmailClient {
+<span class="nc" id="L10">    private String API_KEY = &quot;833b1403258d4619ffedd39c4a80f183-4c2b2223-fea3c929&quot;;</span>
+<span class="nc" id="L11">    private String YOUR_DOMAIN_NAME = &quot;sandboxd904e621b7b141aaa1f0e7965d7a8522.mailgun.org&quot;;</span>
+
+    private MailgunMessagesApi mailgunMessagesApi;
+
+<span class="nc" id="L15">    public EmailClient() {</span>
+<span class="nc" id="L16">        mailgunMessagesApi = MailgunClient.config(API_KEY)</span>
+<span class="nc" id="L17">                .createApi(MailgunMessagesApi.class);</span>
+<span class="nc" id="L18">    }</span>
+
+    public MessageResponse sendSimpleMessage() {
+<span class="nc" id="L21">        Message message = Message.builder()</span>
+<span class="nc" id="L22">                .from(&quot;MNDT Journal &lt;USER@&quot; + YOUR_DOMAIN_NAME + &quot;&gt;&quot;)</span>
+<span class="nc" id="L23">                .to(&quot;mlinarello25@gmail.com&quot;)</span>
+<span class="nc" id="L24">                .subject(&quot;Testing&quot;)</span>
+<span class="nc" id="L25">                .text(&quot;Testing out some Mailgun awesomeness!&quot;)</span>
+<span class="nc" id="L26">                .build();</span>
+
+<span class="nc" id="L28">        return mailgunMessagesApi.sendMessage(YOUR_DOMAIN_NAME, message);</span>
+    }
+
+    public MessageResponse sendWelcomeMessage(String email) {
+<span class="nc" id="L32">        System.out.println(&quot;sendWelcomeMessage in EmailClient.java&quot;);</span>
+<span class="nc" id="L33">        String welcomeMessage = &quot;Welcome &quot; + email + &quot;!\n\n&quot; +</span>
+                &quot;Thank you for joining MNDT Journal!\n&quot; +
+                &quot;Journaling can help you reduce stress, decrease anxiety and overall leave you feeling better for it.\n&quot; +
+                &quot;Journaling also helps you remember your life as you look back on the entries, which helps time&quot; +
+                &quot; not feel like it goes so fast.\n\n&quot; +
+                &quot;We're glad you've decided to join us!&quot; +
+                &quot;\n - MNDT Dev Team&quot;;
+<span class="nc" id="L40">        Message message = Message.builder()</span>
+<span class="nc" id="L41">                .from(&quot;MNDT Journal &lt;USER@&quot; + YOUR_DOMAIN_NAME + &quot;&gt;&quot;)</span>
+<span class="nc" id="L42">                .to(email)</span>
+<span class="nc" id="L43">                .subject(&quot;Welcome to MNDT Journal!&quot;)</span>
+<span class="nc" id="L44">                .text(welcomeMessage)</span>
+<span class="nc" id="L45">                .build();</span>
+<span class="nc" id="L46">        return mailgunMessagesApi.sendMessage(YOUR_DOMAIN_NAME, message);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

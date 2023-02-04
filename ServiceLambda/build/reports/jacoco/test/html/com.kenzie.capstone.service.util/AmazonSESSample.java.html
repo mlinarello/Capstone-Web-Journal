@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AmazonSESSample.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ServiceLambda</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.capstone.service.util</a> &gt; <span class="el_source">AmazonSESSample.java</span></div><h1>AmazonSESSample.java</h1><pre class="source lang-java linenums">package com.kenzie.capstone.service.util;
+
+<span class="nc" id="L3">public class AmazonSESSample {</span>
+
+    // Replace sender@example.com with your &quot;From&quot; address.
+    // This address must be verified with Amazon SES.
+    static final String FROM = &quot;sender@example.com&quot;;
+
+    // Replace recipient@example.com with a &quot;To&quot; address. If your account
+    // is still in the sandbox, this address must be verified.
+    static final String TO = &quot;recipient@example.com&quot;;
+
+    // The configuration set to use for this email. If you do not want to use a
+    // configuration set, comment the following variable and the
+    // .withConfigurationSetName(CONFIGSET); argument below.
+    static final String CONFIGSET = &quot;ConfigSet&quot;;
+
+    // The subject line for the email.
+    static final String SUBJECT = &quot;Amazon SES test (AWS SDK for Java)&quot;;
+
+    // The HTML body for the email.
+    static final String HTMLBODY = &quot;&lt;h1&gt;Amazon SES test (AWS SDK for Java)&lt;/h1&gt;&quot;
+            + &quot;&lt;p&gt;This email was sent with &lt;a href='https://aws.amazon.com/ses/'&gt;&quot;
+            + &quot;Amazon SES&lt;/a&gt; using the &lt;a href='https://aws.amazon.com/sdk-for-java/'&gt;&quot;
+            + &quot;AWS SDK for Java&lt;/a&gt;&quot;;
+
+    // The email body for recipients with non-HTML email clients.
+    static final String TEXTBODY = &quot;This email was sent through Amazon SES &quot;
+            + &quot;using the AWS SDK for Java.&quot;;
+
+//    public static void main(String[] args) throws IOException {
+//
+//        try {
+//            AmazonSimpleEmailService client =
+//                    AmazonSimpleEmailServiceClientBuilder.standard()
+//                            // Replace US_WEST_2 with the AWS Region you're using for
+//                            // Amazon SES.
+//                            .withRegion(Regions.US_WEST_2).build();
+//            SendEmailRequest request = new SendEmailRequest()
+//                    .withDestination(
+//                            new Destination().withToAddresses(TO))
+//                    .withMessage(new Message()
+//                            .withBody(new Body()
+//                                    .withHtml(new Content()
+//                                            .withCharset(&quot;UTF-8&quot;).withData(HTMLBODY))
+//                                    .withText(new Content()
+//                                            .withCharset(&quot;UTF-8&quot;).withData(TEXTBODY)))
+//                            .withSubject(new Content()
+//                                    .withCharset(&quot;UTF-8&quot;).withData(SUBJECT)))
+//                    .withSource(FROM)
+//                    // Comment or remove the next line if you are not using a
+//                    // configuration set
+//                    .withConfigurationSetName(CONFIGSET);
+//            client.sendEmail(request);
+//            System.out.println(&quot;Email sent!&quot;);
+//        } catch (Exception ex) {
+//            System.out.println(&quot;The email was not sent. Error message: &quot;
+//                    + ex.getMessage());
+//        }
+//    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

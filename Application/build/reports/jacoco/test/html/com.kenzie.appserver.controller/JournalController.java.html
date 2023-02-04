@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JournalController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Application</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.appserver.controller</a> &gt; <span class="el_source">JournalController.java</span></div><h1>JournalController.java</h1><pre class="source lang-java linenums">package com.kenzie.appserver.controller;
+
+import com.kenzie.appserver.controller.model.*;
+import com.kenzie.appserver.service.JournalService;
+import com.kenzie.appserver.service.model.Journal;
+import com.kenzie.appserver.service.model.JournalEntry;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping(&quot;/journal&quot;)
+public class JournalController {
+
+    private JournalService journalService;
+
+<span class="nc" id="L23">    public JournalController(JournalService journalService) {</span>
+<span class="nc" id="L24">        this.journalService = journalService;</span>
+<span class="nc" id="L25">    }</span>
+
+    @PostMapping(&quot;/create&quot;)
+    public ResponseEntity&lt;JournalResponse&gt; createJournal(@RequestBody CreateJournalRequest createJournalRequest) {
+<span class="nc" id="L29">        System.out.println(&quot;Hit journalController CreateJournal&quot;);</span>
+<span class="nc" id="L30">        Journal journal = new Journal(createJournalRequest.getUsername(),</span>
+<span class="nc" id="L31">                UUID.randomUUID().toString(),</span>
+<span class="nc" id="L32">                createJournalRequest.getJournalName(),</span>
+<span class="nc" id="L33">                LocalDateTime.now().toString());</span>
+
+        try {
+<span class="nc" id="L36">            journalService.createJournal(journal);</span>
+        }
+<span class="nc" id="L38">        catch (IllegalArgumentException iae) {</span>
+<span class="nc" id="L39">            return ResponseEntity.badRequest().build();</span>
+<span class="nc" id="L40">        }</span>
+
+<span class="nc" id="L42">        JournalResponse createJournalResponse = createJournalResponse(journal);</span>
+
+<span class="nc" id="L44">        return ResponseEntity.ok(createJournalResponse);</span>
+
+    }
+
+    @DeleteMapping(&quot;/{journalId}&quot;)
+    public ResponseEntity&lt;JournalResponse&gt; deleteJournal(@PathVariable(&quot;journalId&quot;) String journalId) {
+<span class="nc" id="L50">        Journal journalToDelete = journalService.getJournalById(journalId);</span>
+
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        if (journalToDelete == null) {</span>
+<span class="nc" id="L53">            return ResponseEntity.notFound().build();</span>
+        }
+
+        try {
+<span class="nc" id="L57">            journalService.deleteJournal(journalToDelete);</span>
+        }
+<span class="nc" id="L59">        catch (IllegalArgumentException iae) {</span>
+<span class="nc" id="L60">            return ResponseEntity.badRequest().build();</span>
+<span class="nc" id="L61">        }</span>
+
+<span class="nc" id="L63">        JournalResponse response = createJournalResponse(journalToDelete);</span>
+
+<span class="nc" id="L65">        return ResponseEntity.ok(response);</span>
+    }
+
+    @GetMapping(&quot;/{journalId}&quot;)
+    public ResponseEntity&lt;JournalResponse&gt; getJournalByJournalId(@PathVariable(&quot;journalId&quot;) String journalId) {
+<span class="nc" id="L70">        Journal journal = journalService.getJournalById(journalId);</span>
+
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (journal == null) {</span>
+<span class="nc" id="L73">            return ResponseEntity.notFound().build();</span>
+        }
+
+<span class="nc" id="L76">        JournalResponse response = createJournalResponse(journal);</span>
+
+<span class="nc" id="L78">        return ResponseEntity.ok(response);</span>
+    }
+    @GetMapping(&quot;/all/{username}&quot;)
+    public ResponseEntity&lt;List&lt;JournalResponse&gt;&gt; getAllJournalsForUser(@PathVariable(&quot;username&quot;) String username) {
+<span class="nc" id="L82">        List&lt;Journal&gt; journalsForUser = journalService.getAllJournalsForUser(username);</span>
+
+<span class="nc bnc" id="L84" title="All 4 branches missed.">        if (journalsForUser == null || journalsForUser.isEmpty()) {</span>
+<span class="nc" id="L85">            return ResponseEntity.noContent().build();</span>
+        }
+
+<span class="nc" id="L88">        List&lt;JournalResponse&gt; responses = journalsForUser</span>
+<span class="nc" id="L89">                .stream()</span>
+<span class="nc" id="L90">                .map(this::createJournalResponse)</span>
+<span class="nc" id="L91">                .collect(Collectors.toList());</span>
+
+<span class="nc" id="L93">        return ResponseEntity.ok(responses);</span>
+    }
+
+    @PostMapping(&quot;/entry&quot;)
+    public ResponseEntity&lt;JournalEntryResponse&gt; createJournalEntry(@RequestBody CreateEntryRequest createEntryRequest) {
+<span class="nc" id="L98">        JournalEntry entry = new JournalEntry();</span>
+<span class="nc" id="L99">        entry.setEntryId(UUID.randomUUID().toString());</span>
+<span class="nc" id="L100">        entry.setJournalId(createEntryRequest.getJournalId());</span>
+<span class="nc" id="L101">        entry.setBody(createEntryRequest.getBody());</span>
+<span class="nc" id="L102">        entry.setTimestamp(LocalDateTime.now().toString());</span>
+<span class="nc" id="L103">        entry.setTitle(createEntryRequest.getTitle());</span>
+<span class="nc" id="L104">        entry.setUsername(createEntryRequest.getUsername());</span>
+
+<span class="nc bnc" id="L106" title="All 4 branches missed.">        if (entry.getJournalId() == null || entry.getBody() == null ||</span>
+<span class="nc bnc" id="L107" title="All 4 branches missed.">        entry.getTitle() == null || entry.getUsername() ==null) {</span>
+<span class="nc" id="L108">            return ResponseEntity.badRequest().build();</span>
+        }
+
+<span class="nc" id="L111">        JournalEntry added = journalService.createJournalEntry(entry);</span>
+
+<span class="nc" id="L113">        return ResponseEntity.ok(createJournalEntryResponse(added));</span>
+    }
+
+    @GetMapping(&quot;/entry/all/{journalId}&quot;)
+    public ResponseEntity&lt;List&lt;JournalEntryResponse&gt;&gt; getAllEntryForJournal(@PathVariable(&quot;journalId&quot;) String journalId) {
+<span class="nc" id="L118">        List&lt;JournalEntry&gt; entries = journalService.getEntriesForJournal(journalId);</span>
+
+<span class="nc" id="L120">        List&lt;JournalEntryResponse&gt; responses = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L122" title="All 2 branches missed.">        for (JournalEntry e : entries) {</span>
+<span class="nc" id="L123">            responses.add(createJournalEntryResponse(e));</span>
+<span class="nc" id="L124">        }</span>
+
+<span class="nc" id="L126">        return ResponseEntity.ok(responses);</span>
+    }
+
+    @DeleteMapping(&quot;/entry/{journalDeleteKey}&quot;)
+    public ResponseEntity&lt;String&gt; deleteEntryByJournalEntryId(@PathVariable(&quot;journalDeleteKey&quot;) String journalDeleteKey) {
+<span class="nc" id="L131">        journalService.deleteJournalEntry(journalDeleteKey);</span>
+<span class="nc" id="L132">        return ResponseEntity.ok().build();</span>
+    }
+
+    private JournalResponse createJournalResponse(Journal journal) {
+<span class="nc" id="L136">        JournalResponse response = new JournalResponse();</span>
+
+<span class="nc" id="L138">        response.setJournalId(journal.getJournalId());</span>
+<span class="nc" id="L139">        response.setJournalName(journal.getJournalName());</span>
+<span class="nc" id="L140">        response.setUsername(journal.getUsername());</span>
+<span class="nc" id="L141">        response.setDateCreated(journal.getDateCreated());</span>
+<span class="nc" id="L142">        return response;</span>
+    }
+
+    private JournalEntryResponse createJournalEntryResponse(JournalEntry entry) {
+<span class="nc" id="L146">        JournalEntryResponse response = new JournalEntryResponse();</span>
+
+<span class="nc" id="L148">        response.setJournalId(entry.getJournalId());</span>
+<span class="nc" id="L149">        response.setJournalEntryId(entry.getEntryId());</span>
+<span class="nc" id="L150">        response.setUsername(entry.getUsername());</span>
+<span class="nc" id="L151">        response.setTimestamp(entry.getTimestamp());</span>
+<span class="nc" id="L152">        response.setBody(entry.getBody());</span>
+<span class="nc" id="L153">        response.setTitle(entry.getTitle());</span>
+
+<span class="nc" id="L155">        return response;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

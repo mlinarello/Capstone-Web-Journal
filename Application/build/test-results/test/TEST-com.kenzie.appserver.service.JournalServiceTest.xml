@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.appserver.service.JournalServiceTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-01-10T03:56:26" hostname="Mikes-MBP.lan" time="0.074">
+  <properties/>
+  <testcase name="createJournal_JournalMissingFields_throwIllegalArgumentExceptionAndNoRepoSaveCall()" classname="com.kenzie.appserver.service.JournalServiceTest" time="0.038"/>
+  <testcase name="deleteJournal_journalDoesNotExist_noDeleteOrEvictCall()" classname="com.kenzie.appserver.service.JournalServiceTest" time="0.007"/>
+  <testcase name="deleteJournal_journalExists_callsRepoDeleteAndCacheEvict()" classname="com.kenzie.appserver.service.JournalServiceTest" time="0.003"/>
+  <testcase name="createJournal_goodJournal_journalCreated()" classname="com.kenzie.appserver.service.JournalServiceTest" time="0.003"/>
+  <testcase name="createJournalEntry_goodInfo_entryCreated()" classname="com.kenzie.appserver.service.JournalServiceTest" time="0.013"/>
+  <testcase name="getJournalById_getsJournalById()" classname="com.kenzie.appserver.service.JournalServiceTest" time="0.001"/>
+  <testcase name="getAllJournals_goodUserWithJournals_getsAllAndOnlyJournalsForUser()" classname="com.kenzie.appserver.service.JournalServiceTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

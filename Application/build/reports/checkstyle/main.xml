@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.17">
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/Application.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/config/DynamoDbConfig.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/config/ExecutorServiceConfig.java">
+<error line="8" column="8" severity="error" message="Unused import - java.util.concurrent.ConcurrentLinkedQueue." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/config/CacheConfig.java">
+<error line="5" severity="error" message="Wrong lexicographical order for &apos;org.springframework.cache.annotation.EnableCaching&apos; import. Should be before &apos;org.springframework.context.annotation.Configuration&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/config/LambdaServiceClientConfiguration.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/config/CacheStore.java">
+<error line="5" severity="error" message="Import statement for &apos;com.kenzie.appserver.service.model.JournalEntry&apos; is in the wrong order. Should be in the &apos;SAME_PACKAGE&apos; group, expecting group &apos;STANDARD_JAVA_PACKAGE&apos; on this line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/Scheduler.java">
+<error line="3" column="8" severity="error" message="Unused import - org.springframework.beans.factory.annotation.Autowired." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="4" column="8" severity="error" message="Unused import - org.springframework.scheduling.annotation.Scheduled." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/repositories/ExampleRepository.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/repositories/JournalEntryRepository.java">
+<error line="4" severity="error" message="&apos;com.kenzie.appserver.repositories.model.JournalEntryKey&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="6" severity="error" message="&apos;org.socialsignin.spring.data.dynamodb.repository.EnableScan&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/repositories/model/JournalEntryKey.java">
+<error line="8" column="5" severity="error" message="Each variable declaration must be in its own statement." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleVariableDeclarationsCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/repositories/model/ExampleRecord.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/repositories/model/JournalEntryRecord.java">
+<error line="4" severity="error" message="&apos;com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="63" column="36" severity="error" message="&apos;username&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/repositories/model/JournalKey.java">
+<error line="5" column="8" severity="error" message="Unused import - org.springframework.context.annotation.Bean." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="10" column="5" severity="error" message="Each variable declaration must be in its own statement." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleVariableDeclarationsCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/repositories/model/UserRecord.java">
+<error line="57" severity="error" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+<error line="58" severity="error" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+<error line="62" severity="error" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+<error line="63" severity="error" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+<error line="64" severity="error" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/repositories/model/JournalRecord.java">
+<error line="3" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - com.amazonaws.services.dynamodbv2.datamodeling.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="4" column="8" severity="error" message="Unused import - org.springframework.context.annotation.Bean." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/repositories/JournalRepository.java">
+<error line="5" column="8" severity="error" message="Unused import - com.kenzie.appserver.service.model.Journal." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="6" severity="error" message="&apos;org.socialsignin.spring.data.dynamodb.repository.EnableScan&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="9" column="8" severity="error" message="Unused import - java.util.List." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/repositories/UserRepository.java">
+<error line="4" severity="error" message="&apos;com.kenzie.appserver.repositories.model.UserRecord&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="5" severity="error" message="&apos;org.socialsignin.spring.data.dynamodb.repository.EnableScan&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/InspoController.java">
+<error line="4" severity="error" message="&apos;com.kenzie.appserver.controller.model.Quote&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="6" severity="error" message="&apos;org.springframework.http.ResponseEntity&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="21" column="57" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/ExampleController.java">
+<error line="7" severity="error" message="&apos;org.springframework.http.ResponseEntity&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="8" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.springframework.web.bind.annotation.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/JournalController.java">
+<error line="3" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - com.kenzie.appserver.controller.model.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="7" severity="error" message="&apos;org.springframework.http.ResponseEntity&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="8" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.springframework.web.bind.annotation.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="10" column="8" severity="error" message="Unused import - java.net.URI." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="37" column="9" severity="error" message="&apos;}&apos; at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally)." source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+<error line="58" column="9" severity="error" message="&apos;}&apos; at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally)." source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+<error line="107" severity="error" message="&apos;entry&apos; has incorrect indentation level 8, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="107" column="57" severity="error" message="&apos;==&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="117" severity="error" message="Line is longer than 120 characters (found 122)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="130" severity="error" message="Line is longer than 120 characters (found 122)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/JournalResponse.java">
+<error line="53" column="39" severity="error" message="&apos;datecreated&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/CreateJournalRequest.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/CreateUserResponse.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/JournalUpdateRequest.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/SendEmailRequest.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/CreateEntryRequest.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/CreateUserRequest.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/Quote.java">
+<error line="4" column="5" severity="error" message="Each variable declaration must be in its own statement." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleVariableDeclarationsCheck"/>
+<error line="30" column="31" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/LoginRequest.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/JournalEntryResponse.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/ExampleResponse.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/ExampleCreateRequest.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/model/NotifyUserRequest.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/BaseController.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/controller/UserController.java">
+<error line="4" severity="error" message="&apos;com.kenzie.appserver.controller.model.CreateUserRequest&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" severity="error" message="&apos;org.springframework.http.ResponseEntity&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="28" severity="error" message="Line is longer than 120 characters (found 125)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="29" column="17" severity="error" message="&apos;==&apos; should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="73" column="99" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="81" severity="error" message="Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 72." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/ApplicationStartUpListener.java">
+<error line="4" severity="error" message="&apos;org.springframework.context.event.ContextRefreshedEvent&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/service/JournalService.java">
+<error line="4" severity="error" message="&apos;com.kenzie.appserver.config.CacheStore&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" severity="error" message="&apos;org.springframework.beans.factory.annotation.Autowired&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="28" severity="error" message="Line is longer than 120 characters (found 129)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="42" severity="error" message="&apos;journal&apos; has incorrect indentation level 8, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="43" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="78" severity="error" message="Line is longer than 120 characters (found 138)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="87" column="9" severity="error" message="&apos;for&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/service/UserService.java">
+<error line="7" severity="error" message="&apos;com.kenzie.capstone.service.client.LambdaServiceClient&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="42" column="9" severity="error" message="&apos;try&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="42" column="12" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="49" column="30" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="64" column="9" severity="error" message="&apos;if&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="64" column="66" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="66" column="13" severity="error" message="&apos;if&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="66" column="82" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/service/InspoService.java">
+<error line="4" severity="error" message="&apos;org.springframework.stereotype.Service&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="22" column="21" severity="error" message="&apos;quotes&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="33" severity="error" message="Line is longer than 120 characters (found 139)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/service/ExampleService.java">
+<error line="4" severity="error" message="Wrong lexicographical order for &apos;com.kenzie.appserver.repositories.ExampleRepository&apos; import. Should be before &apos;com.kenzie.appserver.repositories.model.ExampleRecord&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/service/model/User.java">
+<error line="4" column="5" severity="error" message="Each variable declaration must be in its own statement." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleVariableDeclarationsCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/service/model/Journal.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/service/model/JournalEntry.java">
+<error line="4" column="5" severity="error" message="Each variable declaration must be in its own statement." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleVariableDeclarationsCheck"/>
+<error line="10" severity="error" message="Line is longer than 120 characters (found 128)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="31" column="35" severity="error" message="&apos;journalEntryId&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/Application/src/main/java/com/kenzie/appserver/service/model/Example.java">
+</file>
+</checkstyle>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.17">
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/util/EmailClient.java">
+<error line="4" severity="error" message="&apos;com.mailgun.api.v3.MailgunMessagesApi&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" column="20" severity="error" message="Name &apos;API_KEY&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
+<error line="11" column="20" severity="error" message="Name &apos;YOUR_DOMAIN_NAME&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
+<error line="35" severity="error" message="Line is longer than 120 characters (found 122)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/util/AmazonSESSample.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="23" column="13" severity="error" message="&apos;+&apos; should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="24" column="13" severity="error" message="&apos;+&apos; should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="25" column="13" severity="error" message="&apos;+&apos; should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="29" column="13" severity="error" message="&apos;+&apos; should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/util/DynamoDbClientProvider.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/dao/ExampleDao.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/dependency/ServiceComponent.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/dependency/DaoModule.java">
+<error line="4" severity="error" message="&apos;com.kenzie.capstone.service.dao.ExampleDao&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/dependency/ServiceModule.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/LambdaService.java">
+<error line="7" severity="error" message="&apos;com.mailgun.model.message.MessageResponse&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" severity="error" message="Wrong lexicographical order for &apos;java.util.List&apos; import. Should be before &apos;javax.inject.Inject&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="11" severity="error" message="Wrong lexicographical order for &apos;java.util.UUID&apos; import. Should be before &apos;javax.inject.Inject&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="36" column="60" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/model/ExampleRecord.java">
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/lambda/SetExampleData.java">
+<error line="6" severity="error" message="Wrong lexicographical order for &apos;com.kenzie.capstone.service.dependency.DaggerServiceComponent&apos; import. Should be before &apos;com.kenzie.capstone.service.model.ExampleData&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/lambda/SendEmailReminder.java">
+<error line="9" severity="error" message="Import statement for &apos;com.kenzie.capstone.service.LambdaService&apos; is in the wrong order. Should be in the &apos;SAME_PACKAGE&apos; group, expecting group &apos;STANDARD_JAVA_PACKAGE&apos; on this line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" severity="error" message="Import statement for &apos;com.kenzie.capstone.service.dependency.DaggerServiceComponent&apos; is in the wrong order. Should be in the &apos;SAME_PACKAGE&apos; group, expecting group &apos;STANDARD_JAVA_PACKAGE&apos; on this line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="11" severity="error" message="Import statement for &apos;com.kenzie.capstone.service.dependency.ServiceComponent&apos; is in the wrong order. Should be in the &apos;SAME_PACKAGE&apos; group, expecting group &apos;STANDARD_JAVA_PACKAGE&apos; on this line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="/Users/mikelinarello/kenzie/ata-capstone-project-MNDT/ServiceLambda/src/main/java/com/kenzie/capstone/service/lambda/GetExampleData.java">
+<error line="6" severity="error" message="Wrong lexicographical order for &apos;com.kenzie.capstone.service.dependency.DaggerServiceComponent&apos; import. Should be before &apos;com.kenzie.capstone.service.model.ExampleData&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+</checkstyle>
